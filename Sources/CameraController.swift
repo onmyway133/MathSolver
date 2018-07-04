@@ -17,6 +17,7 @@ final class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBu
 
   private let captureSession = AVCaptureSession()
   private(set) var cameraLayer: AVCaptureVideoPreviewLayer!
+  let overlayLayer = CALayer()
 
   weak var delegate: CameraControllerDelegate?
 
@@ -33,7 +34,8 @@ final class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBu
     super.viewDidLayoutSubviews()
 
     // make sure the layer is the correct size
-    self.cameraLayer.frame = view.bounds
+    cameraLayer.frame = view.bounds
+    overlayLayer.frame = view.bounds
   }
 
   private func setupAVSession() {
@@ -68,12 +70,13 @@ final class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBu
 
     // connection
     let connection = output.connection(with: .video)
-    connection?.videoOrientation = .portrait
+    connection?.videoOrientation = .landscapeRight
 
     // preview layer
     cameraLayer = AVCaptureVideoPreviewLayer(session: captureSession)
     cameraLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
     view.layer.addSublayer(cameraLayer)
+    view.layer.addSublayer(overlayLayer)
   }
 
   func captureOutput(
