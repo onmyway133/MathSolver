@@ -1,0 +1,28 @@
+PODS:
+  - Anchors (2.3.0)
+  - GPUImage (0.1.7)
+  - SwiftOCR (1.1):
+    - GPUImage
+  - TesseractOCRiOS (4.0.0)
+
+DEPENDENCIES:
+  - Anchors
+  - SwiftOCR
+  - TesseractOCRiOS
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Anchors
+    - GPUImage
+    - SwiftOCR
+    - TesseractOCRiOS
+
+SPEC CHECKSUMS:
+  Anchors: 000f9206b6f898ac9c021e4cf537161efb0d9ec3
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  SwiftOCR: e1a5c7582f074b54df2b1ad273983088b3cf5d45
+  TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
+
+PODFILE CHECKSUM: 6df1006eda351be25777db666572b7b88675939b
+
+COCOAPODS: 1.5.3

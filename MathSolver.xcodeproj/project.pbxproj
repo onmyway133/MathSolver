@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EA050433803884055096E94 /* Pods_MathSolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A0F412724233B7C19549A /* Pods_MathSolver.framework */; };
 		D2593A8B20ED179000EADD31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593A8A20ED179000EADD31 /* AppDelegate.swift */; };
 		D2593A8D20ED179000EADD31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593A8C20ED179000EADD31 /* ViewController.swift */; };
 		D2593A9020ED179000EADD31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2593A8E20ED179000EADD31 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A2FEFEE349E2287EC8B4744 /* Pods-MathSolver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MathSolver.release.xcconfig"; path = "Pods/Target Support Files/Pods-MathSolver/Pods-MathSolver.release.xcconfig"; sourceTree = "<group>"; };
+		C1213BEE894BD03D32B8A266 /* Pods-MathSolver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MathSolver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MathSolver/Pods-MathSolver.debug.xcconfig"; sourceTree = "<group>"; };
 		D2593A8720ED179000EADD31 /* MathSolver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathSolver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2593A8A20ED179000EADD31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2593A8C20ED179000EADD31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		D2593A9120ED179100EADD31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2593A9420ED179100EADD31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2593A9620ED179100EADD31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB4A0F412724233B7C19549A /* Pods_MathSolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MathSolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EA050433803884055096E94 /* Pods_MathSolver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55A0A509F357E1C2E4AB25EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1213BEE894BD03D32B8A266 /* Pods-MathSolver.debug.xcconfig */,
+				0A2FEFEE349E2287EC8B4744 /* Pods-MathSolver.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		68FAED5E4CBCFA09246EC356 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A0F412724233B7C19549A /* Pods_MathSolver.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D2593A7E20ED179000EADD31 = {
 			isa = PBXGroup;
 			children = (
 				D2593A8920ED179000EADD31 /* MathSolver */,
 				D2593A8820ED179000EADD31 /* Products */,
+				55A0A509F357E1C2E4AB25EC /* Pods */,
+				68FAED5E4CBCFA09246EC356 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2593A9920ED179100EADD31 /* Build configuration list for PBXNativeTarget "MathSolver" */;
 			buildPhases = (
+				9FBDE53E61B3339C67119BFB /* [CP] Check Pods Manifest.lock */,
 				D2593A8320ED179000EADD31 /* Sources */,
 				D2593A8420ED179000EADD31 /* Frameworks */,
 				D2593A8520ED179000EADD31 /* Resources */,
+				81584DE125876804A0BB6E82 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		81584DE125876804A0BB6E82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MathSolver/Pods-MathSolver-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Anchors/Anchors.framework",
+				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftOCR/SwiftOCR.framework",
+				"${BUILT_PRODUCTS_DIR}/TesseractOCRiOS/TesseractOCR.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Anchors.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftOCR.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TesseractOCR.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MathSolver/Pods-MathSolver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FBDE53E61B3339C67119BFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MathSolver-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2593A8320ED179000EADD31 /* Sources */ = {
@@ -278,6 +349,7 @@
 		};
 		D2593A9A20ED179100EADD31 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1213BEE894BD03D32B8A266 /* Pods-MathSolver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +368,7 @@
 		};
 		D2593A9B20ED179100EADD31 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A2FEFEE349E2287EC8B4744 /* Pods-MathSolver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
