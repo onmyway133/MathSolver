@@ -24,6 +24,7 @@
 		D2593AB720ED1BD500EADD31 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2593AB620ED1BD500EADD31 /* CoreImage.framework */; };
 		D2593ABB20ED21EA00EADD31 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = D2593ABA20ED21EA00EADD31 /* tessdata */; };
 		D2593ABD20ED274F00EADD31 /* MathService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593ABC20ED274F00EADD31 /* MathService.swift */; };
+		D2593ABF20ED281D00EADD31 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593ABE20ED281D00EADD31 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		D2593AB620ED1BD500EADD31 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		D2593ABA20ED21EA00EADD31 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		D2593ABC20ED274F00EADD31 /* MathService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathService.swift; sourceTree = "<group>"; };
+		D2593ABE20ED281D00EADD31 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		EB4A0F412724233B7C19549A /* Pods_MathSolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MathSolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 				D2593AA520ED194500EADD31 /* AppDelegate.swift */,
 				D2593AA620ED194500EADD31 /* Image+Extension.swift */,
 				D2593ABC20ED274F00EADD31 /* MathService.swift */,
+				D2593ABE20ED281D00EADD31 /* Result.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				D2593AAE20ED194500EADD31 /* BoxService.swift in Sources */,
 				D2593AA920ED194500EADD31 /* CameraController.swift in Sources */,
 				D2593AB020ED194500EADD31 /* Image+Extension.swift in Sources */,
+				D2593ABF20ED281D00EADD31 /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

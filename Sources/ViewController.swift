@@ -17,7 +17,6 @@ class ViewController: UIViewController {
   private let visionService = VisionService()
   private let boxService = BoxService()
   private let ocrService = OCRService()
-  private let musicService = MusicService()
 
   private lazy var label: UILabel = {
     let label = UILabel()
@@ -42,12 +41,6 @@ class ViewController: UIViewController {
     visionService.delegate = self
     boxService.delegate = self
     ocrService.delegate = self
-  }
-
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-
-    musicService.play(fileName: "introduction")
   }
 }
 
@@ -83,6 +76,5 @@ extension ViewController: BoxServiceDelegate {
 extension ViewController: OCRServiceDelegate {
   func ocrService(_ service: OCRService, didDetect text: String) {
     label.text = text
-    musicService.handle(text: text)
   }
 }

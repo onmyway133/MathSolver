@@ -9,5 +9,7 @@
 import Foundation
 
 class MathService {
-  
+  func solve(equation: String) -> Int {
+    return 0
+  }
 }
