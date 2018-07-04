@@ -14,35 +14,16 @@ protocol CameraControllerDelegate: class {
 }
 
 final class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
-  private(set) lazy var cameraLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
 
-  private lazy var captureSession: AVCaptureSession = {
-    let session = AVCaptureSession()
-    session.sessionPreset = AVCaptureSession.Preset.photo
-
-    guard
-      let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
-      let input = try? AVCaptureDeviceInput(device: backCamera)
-    else {
-      return session
-    }
-
-    session.addInput(input)
-    return session
-  }()
+  private let captureSession = AVCaptureSession()
+  private(set) var cameraLayer: AVCaptureVideoPreviewLayer!
 
   weak var delegate: CameraControllerDelegate?
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    cameraLayer.videoGravity = .resizeAspectFill
-    view.layer.addSublayer(cameraLayer)
-
-    // register to receive buffers from the camera
-    let videoOutput = AVCaptureVideoDataOutput()
-    videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
-    self.captureSession.addOutput(videoOutput)
+    setupAVSession()
 
     // begin the session
     self.captureSession.startRunning()
@@ -53,6 +34,42 @@ final class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBu
 
     // make sure the layer is the correct size
     self.cameraLayer.frame = view.bounds
+  }
+
+  private func setupAVSession() {
+    captureSession.beginConfiguration()
+    captureSession.sessionPreset = .high
+
+    defer {
+      captureSession.commitConfiguration()
+    }
+
+    // input
+    guard
+      let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
+      let input = try? AVCaptureDeviceInput(device: backCamera),
+      captureSession.canAddInput(input)
+    else {
+      return
+    }
+
+    captureSession.addInput(input)
+
+    // output
+    let output = AVCaptureVideoDataOutput()
+
+    guard captureSession.canAddOutput(output) else {
+      return
+    }
+
+    captureSession.addOutput(output)
+    output.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
+    output.alwaysDiscardsLateVideoFrames = true
+
+    // preview layer
+    cameraLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+    cameraLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+    view.layer.addSublayer(cameraLayer)
   }
 
   func captureOutput(
