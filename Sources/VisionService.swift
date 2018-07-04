@@ -39,7 +39,7 @@ final class VisionService {
 
     let handler = VNImageRequestHandler(
       cgImage: cgImage,
-      orientation: CGImagePropertyOrientation.right,
+      orientation: CGImagePropertyOrientation.up,
       options: [VNImageOption: Any]()
     )
 

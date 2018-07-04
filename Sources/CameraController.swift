@@ -70,7 +70,7 @@ final class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBu
 
     // connection
     let connection = output.connection(with: .video)
-    connection?.videoOrientation = .landscapeRight
+    connection?.videoOrientation = .portrait
 
     // preview layer
     cameraLayer = AVCaptureVideoPreviewLayer(session: captureSession)

@@ -47,10 +47,10 @@ final class BoxService {
   }
 
   private func cropImage(image: UIImage, normalisedRect: CGRect) -> UIImage? {
-    let x = normalisedRect.origin.y * image.size.width
-    let y = normalisedRect.origin.x * image.size.height
-    let width = normalisedRect.height * image.size.width
-    let height = normalisedRect.width * image.size.height
+    let x = normalisedRect.origin.x * image.size.width
+    let y = normalisedRect.origin.y * image.size.height
+    let width = normalisedRect.width * image.size.width
+    let height = normalisedRect.height * image.size.height
 
     let rect = CGRect(x: x, y: y, width: width, height: height)
     guard let cropped = image.cgImage?.cropping(to: rect) else {
