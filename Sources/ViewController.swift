@@ -17,6 +17,7 @@ class ViewController: UIViewController {
   private let visionService = VisionService()
   private let boxService = BoxService()
   private let ocrService = OCRService()
+  private let mathService = MathService()
 
   private lazy var label: UILabel = {
     let label = UILabel()
@@ -41,6 +42,7 @@ class ViewController: UIViewController {
     visionService.delegate = self
     boxService.delegate = self
     ocrService.delegate = self
+    mathService.delegate = self
   }
 }
 
@@ -76,5 +78,11 @@ extension ViewController: BoxServiceDelegate {
 extension ViewController: OCRServiceDelegate {
   func ocrService(_ service: OCRService, didDetect text: String) {
     label.text = text
+  }
+}
+
+extension ViewController: MathServiceDelegate {
+  func mathService(_ service: MathService, didSolve result: Int) {
+    print(result)
   }
 }

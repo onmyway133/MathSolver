@@ -8,8 +8,15 @@
 
 import Foundation
 
+protocol MathServiceDelegate: class {
+  func mathService(_ service: MathService, didSolve result: Int)
+}
+
 class MathService {
-  func solve(equation: String) -> Int {
-    return 0
+
+  weak var delegate: MathServiceDelegate?
+
+  func solve(equation: String) {
+    
   }
 }
