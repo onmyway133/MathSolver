@@ -11,7 +11,7 @@ import Vision
 import AVFoundation
 
 protocol BoxServiceDelegate: class {
-  func boxService(_ service: BoxService, didDetect images: [UIImage])
+  func boxService(_ service: BoxService, didDetect image: UIImage)
 }
 
 final class BoxService {
@@ -25,19 +25,27 @@ final class BoxService {
       layer.removeFromSuperlayer()
     })
 
-    var images: [UIImage] = []
     let results = results.filter({ $0.confidence > 0.5 })
 
+    // box
     results.forEach({ result in
       let normalisedRect = normalise(box: result)
       drawBox(overlayLayer: overlayLayer, normalisedRect: normalisedRect)
 
-      if let croppedImage = cropImage(image: image, normalisedRect: normalisedRect) {
-        images.append(croppedImage)
-      }
+
     })
 
-    delegate?.boxService(self, didDetect: images)
+    // image
+    guard let biggestResult = results
+      .sorted(by: { $0.boundingBox.width > $1.boundingBox.width })
+      .first else {
+        return
+    }
+
+    let normalisedRect = normalise(box: biggestResult)
+    if let croppedImage = cropImage(image: image, normalisedRect: normalisedRect) {
+      delegate?.boxService(self, didDetect: croppedImage)
+    }
   }
 
   private func cropImage(image: UIImage, normalisedRect: CGRect) -> UIImage? {
