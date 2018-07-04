@@ -66,6 +66,10 @@ final class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBu
     output.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
     output.alwaysDiscardsLateVideoFrames = true
 
+    // connection
+    let connection = output.connection(with: .video)
+    connection?.videoOrientation = .portrait
+
     // preview layer
     cameraLayer = AVCaptureVideoPreviewLayer(session: captureSession)
     cameraLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
