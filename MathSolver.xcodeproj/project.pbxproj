@@ -14,7 +14,6 @@
 		D2593AA720ED194500EADD31 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593A9D20ED194500EADD31 /* Array+Extensions.swift */; };
 		D2593AA820ED194500EADD31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593A9E20ED194500EADD31 /* ViewController.swift */; };
 		D2593AA920ED194500EADD31 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593A9F20ED194500EADD31 /* CameraController.swift */; };
-		D2593AAA20ED194500EADD31 /* MusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593AA020ED194500EADD31 /* MusicService.swift */; };
 		D2593AAB20ED194500EADD31 /* VisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593AA120ED194500EADD31 /* VisionService.swift */; };
 		D2593AAC20ED194500EADD31 /* OCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593AA220ED194500EADD31 /* OCRService.swift */; };
 		D2593AAD20ED194500EADD31 /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593AA320ED194500EADD31 /* ViewController+Extensions.swift */; };
@@ -24,6 +23,7 @@
 		D2593AB520ED1BCA00EADD31 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D2593AB320ED1BB600EADD31 /* libstdc++.tbd */; };
 		D2593AB720ED1BD500EADD31 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2593AB620ED1BD500EADD31 /* CoreImage.framework */; };
 		D2593ABB20ED21EA00EADD31 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = D2593ABA20ED21EA00EADD31 /* tessdata */; };
+		D2593ABD20ED274F00EADD31 /* MathService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593ABC20ED274F00EADD31 /* MathService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,6 @@
 		D2593A9D20ED194500EADD31 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		D2593A9E20ED194500EADD31 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D2593A9F20ED194500EADD31 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
-		D2593AA020ED194500EADD31 /* MusicService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicService.swift; sourceTree = "<group>"; };
 		D2593AA120ED194500EADD31 /* VisionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionService.swift; sourceTree = "<group>"; };
 		D2593AA220ED194500EADD31 /* OCRService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCRService.swift; sourceTree = "<group>"; };
 		D2593AA320ED194500EADD31 /* ViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		D2593AB320ED1BB600EADD31 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		D2593AB620ED1BD500EADD31 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		D2593ABA20ED21EA00EADD31 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		D2593ABC20ED274F00EADD31 /* MathService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathService.swift; sourceTree = "<group>"; };
 		EB4A0F412724233B7C19549A /* Pods_MathSolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MathSolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -120,13 +120,13 @@
 				D2593A9D20ED194500EADD31 /* Array+Extensions.swift */,
 				D2593A9E20ED194500EADD31 /* ViewController.swift */,
 				D2593A9F20ED194500EADD31 /* CameraController.swift */,
-				D2593AA020ED194500EADD31 /* MusicService.swift */,
 				D2593AA120ED194500EADD31 /* VisionService.swift */,
 				D2593AA220ED194500EADD31 /* OCRService.swift */,
 				D2593AA320ED194500EADD31 /* ViewController+Extensions.swift */,
 				D2593AA420ED194500EADD31 /* BoxService.swift */,
 				D2593AA520ED194500EADD31 /* AppDelegate.swift */,
 				D2593AA620ED194500EADD31 /* Image+Extension.swift */,
+				D2593ABC20ED274F00EADD31 /* MathService.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -260,10 +260,10 @@
 			files = (
 				D2593AAF20ED194500EADD31 /* AppDelegate.swift in Sources */,
 				D2593AAC20ED194500EADD31 /* OCRService.swift in Sources */,
-				D2593AAA20ED194500EADD31 /* MusicService.swift in Sources */,
 				D2593AA720ED194500EADD31 /* Array+Extensions.swift in Sources */,
 				D2593AAD20ED194500EADD31 /* ViewController+Extensions.swift in Sources */,
 				D2593AA820ED194500EADD31 /* ViewController.swift in Sources */,
+				D2593ABD20ED274F00EADD31 /* MathService.swift in Sources */,
 				D2593AAB20ED194500EADD31 /* VisionService.swift in Sources */,
 				D2593AAE20ED194500EADD31 /* BoxService.swift in Sources */,
 				D2593AA920ED194500EADD31 /* CameraController.swift in Sources */,
