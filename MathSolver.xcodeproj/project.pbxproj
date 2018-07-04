@@ -21,6 +21,9 @@
 		D2593AAE20ED194500EADD31 /* BoxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593AA420ED194500EADD31 /* BoxService.swift */; };
 		D2593AAF20ED194500EADD31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593AA520ED194500EADD31 /* AppDelegate.swift */; };
 		D2593AB020ED194500EADD31 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2593AA620ED194500EADD31 /* Image+Extension.swift */; };
+		D2593AB520ED1BCA00EADD31 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D2593AB320ED1BB600EADD31 /* libstdc++.tbd */; };
+		D2593AB720ED1BD500EADD31 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2593AB620ED1BD500EADD31 /* CoreImage.framework */; };
+		D2593ABB20ED21EA00EADD31 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = D2593ABA20ED21EA00EADD31 /* tessdata */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		D2593AA420ED194500EADD31 /* BoxService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxService.swift; sourceTree = "<group>"; };
 		D2593AA520ED194500EADD31 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2593AA620ED194500EADD31 /* Image+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
+		D2593AB320ED1BB600EADD31 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		D2593AB620ED1BD500EADD31 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		D2593ABA20ED21EA00EADD31 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		EB4A0F412724233B7C19549A /* Pods_MathSolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MathSolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -49,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2593AB720ED1BD500EADD31 /* CoreImage.framework in Frameworks */,
+				D2593AB520ED1BCA00EADD31 /* libstdc++.tbd in Frameworks */,
 				1EA050433803884055096E94 /* Pods_MathSolver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +76,8 @@
 		68FAED5E4CBCFA09246EC356 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2593AB620ED1BD500EADD31 /* CoreImage.framework */,
+				D2593AB320ED1BB600EADD31 /* libstdc++.tbd */,
 				EB4A0F412724233B7C19549A /* Pods_MathSolver.framework */,
 			);
 			name = Frameworks;
@@ -76,6 +86,7 @@
 		D2593A7E20ED179000EADD31 = {
 			isa = PBXGroup;
 			children = (
+				D2593AB920ED21DF00EADD31 /* Resources */,
 				D2593A9C20ED194500EADD31 /* Sources */,
 				D2593A8920ED179000EADD31 /* MathSolver */,
 				D2593A8820ED179000EADD31 /* Products */,
@@ -118,6 +129,14 @@
 				D2593AA620ED194500EADD31 /* Image+Extension.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		D2593AB920ED21DF00EADD31 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D2593ABA20ED21EA00EADD31 /* tessdata */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2593A9520ED179100EADD31 /* LaunchScreen.storyboard in Resources */,
+				D2593ABB20ED21EA00EADD31 /* tessdata in Resources */,
 				D2593A9220ED179100EADD31 /* Assets.xcassets in Resources */,
 				D2593A9020ED179000EADD31 /* Main.storyboard in Resources */,
 			);
@@ -402,7 +422,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = no.onmyway133.MathSolver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -421,7 +441,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = no.onmyway133.MathSolver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
