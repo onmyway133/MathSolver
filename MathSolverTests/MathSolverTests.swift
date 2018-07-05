@@ -15,4 +15,9 @@ class MathSolverTests: XCTestCase {
     XCTAssertEqual(math.solve(expression: "(1+2)*3"), 9)
     XCTAssertEqual(math.solve(expression: "2^3+10/2"), 13)
   }
+
+  func testValidate() {
+    let math = MathService()
+    XCTAssertEqual(math.validate(expression: "(1+2)*3/n/n"), "(1+2)*3")
+  }
 }

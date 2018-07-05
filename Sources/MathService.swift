@@ -12,6 +12,14 @@ public class MathService {
   public init() {}
 
   public func solve(expression: String) -> Double {
-    return (expression as NSString).evaluateInfixNotationString()
+    let validatedExpression = validate(expression: expression)
+    return (validatedExpression as NSString).evaluateInfixNotationString()
+  }
+
+  public func validate(expression: String) -> String {
+    let set = Set("0123456789()+-*/")
+    return expression
+      .replacingOccurrences(of: "/n", with: "")
+      .filter({ set.contains($0) })
   }
 }
