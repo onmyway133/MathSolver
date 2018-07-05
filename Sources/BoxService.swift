@@ -52,7 +52,8 @@ final class BoxService {
     let width = normalisedRect.width * image.size.width
     let height = normalisedRect.height * image.size.height
 
-    let rect = CGRect(x: x, y: y, width: width, height: height)
+    let rect = CGRect(x: x, y: y, width: width, height: height).scaleUp(scaleUp: 0.1)
+
     guard let cropped = image.cgImage?.cropping(to: rect) else {
       return nil
     }
@@ -68,7 +69,7 @@ final class BoxService {
     let height = normalisedRect.height * overlayLayer.frame.size.height
 
     let outline = CALayer()
-    outline.frame = CGRect(x: x, y: y, width: width, height: height)
+    outline.frame = CGRect(x: x, y: y, width: width, height: height).scaleUp(scaleUp: 0.1)
     outline.borderWidth = 2.0
     outline.borderColor = UIColor.red.cgColor
 
@@ -82,5 +83,16 @@ final class BoxService {
       width: box.boundingBox.size.width,
       height: box.boundingBox.size.height
     )
+  }
+}
+
+extension CGRect {
+  func scaleUp(scaleUp: CGFloat) -> CGRect {
+    let biggerRect = self.insetBy(
+      dx: -self.size.width * scaleUp,
+      dy: -self.size.height * scaleUp
+    )
+
+    return biggerRect
   }
 }
