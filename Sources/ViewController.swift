@@ -90,6 +90,7 @@ extension ViewController: OCRServiceDelegate {
   }
 
   private func show(result: Double) {
+    calculatedLabel.text = "\(result)"
     calculatedLabel.transform = .identity
     UIView.animate(
       withDuration: 0.25,

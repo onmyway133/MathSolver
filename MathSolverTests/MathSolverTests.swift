@@ -12,6 +12,7 @@ import MathSolver
 class MathSolverTests: XCTestCase {
   func testMath() {
     let math = MathService()
+    XCTAssertEqual(math.infix2postfix(expression: "(1+2)*3"), "1 2 + 3 *")
     XCTAssertEqual(math.solve(expression: "(1+2)*3"), 9)
     XCTAssertEqual(math.solve(expression: "2^3+10/2"), 13)
   }

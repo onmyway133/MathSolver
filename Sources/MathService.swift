@@ -11,6 +11,10 @@ import Foundation
 public class MathService {
   public init() {}
 
+  public func infix2postfix(expression: String) -> String {
+    return (expression as NSString).infixToPostfix(withOutputDecimalSeparator: "")
+  }
+
   public func solve(expression: String) -> Double {
     let validatedExpression = validate(expression: expression)
     return (validatedExpression as NSString).evaluateInfixNotationString()
