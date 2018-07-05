@@ -12,11 +12,13 @@ protocol MathServiceDelegate: class {
   func mathService(_ service: MathService, didSolve result: Int)
 }
 
-class MathService {
+public class MathService {
 
   weak var delegate: MathServiceDelegate?
 
-  func solve(equation: String) {
-    
+  public init() {}
+
+  public func solve(expression: String) -> Double {
+    return (expression as NSString).evaluateInfixNotationString()
   }
 }

@@ -16,7 +16,7 @@ protocol CameraControllerDelegate: class {
 final class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
 
   private let captureSession = AVCaptureSession()
-  private(set) var cameraLayer: AVCaptureVideoPreviewLayer!
+  private lazy var cameraLayer = AVCaptureVideoPreviewLayer(session: captureSession)
   let overlayLayer = CALayer()
 
   weak var delegate: CameraControllerDelegate?
@@ -73,7 +73,6 @@ final class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBu
     connection?.videoOrientation = .portrait
 
     // preview layer
-    cameraLayer = AVCaptureVideoPreviewLayer(session: captureSession)
     cameraLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
     view.layer.addSublayer(cameraLayer)
     view.layer.addSublayer(overlayLayer)
