@@ -8,14 +8,7 @@
 
 import Foundation
 
-protocol MathServiceDelegate: class {
-  func mathService(_ service: MathService, didSolve result: Int)
-}
-
 public class MathService {
-
-  weak var delegate: MathServiceDelegate?
-
   public init() {}
 
   public func solve(expression: String) -> Double {

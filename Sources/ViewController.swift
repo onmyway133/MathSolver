@@ -19,11 +19,20 @@ class ViewController: UIViewController {
   private let ocrService = OCRService()
   private let mathService = MathService()
 
-  private lazy var label: UILabel = {
+  private lazy var recognisedTextLabel: UILabel = {
     let label = UILabel()
     label.textAlignment = .right
     label.font = UIFont.preferredFont(forTextStyle: .headline)
     label.textColor = .black
+    label.alpha = 0
+    return label
+  }()
+
+  private lazy var calculatedLabel: UILabel = {
+    let label = UILabel()
+    label.textAlignment = .center
+    label.font = UIFont.boldSystemFont(ofSize: 50)
+    label.textColor = .green
     return label
   }()
 
@@ -36,18 +45,22 @@ class ViewController: UIViewController {
       cameraController.view.anchor.edges
     )
 
-    view.addSubview(label)
-    activate(label.anchor.bottom.right.constant(-20))
+    view.addSubview(recognisedTextLabel)
+    view.addSubview(calculatedLabel)
+    activate(
+      recognisedTextLabel.anchor.bottom.right.constant(-20),
+      calculatedLabel.anchor.center
+    )
 
     visionService.delegate = self
     boxService.delegate = self
     ocrService.delegate = self
-    mathService.delegate = self
   }
 }
 
 extension ViewController: CameraControllerDelegate {
   func cameraController(_ controller: CameraController, didCapture buffer: CMSampleBuffer) {
+    calculatedLabel.alpha = 0
     visionService.handle(buffer: buffer)
   }
 }
@@ -71,12 +84,20 @@ extension ViewController: BoxServiceDelegate {
 
 extension ViewController: OCRServiceDelegate {
   func ocrService(_ service: OCRService, didDetect text: String) {
-    label.text = text
+    recognisedTextLabel.text = text
+    let result = mathService.solve(expression: text)
+    show(result: result)
   }
-}
 
-extension ViewController: MathServiceDelegate {
-  func mathService(_ service: MathService, didSolve result: Int) {
-    print(result)
+  private func show(result: Double) {
+    calculatedLabel.transform = .identity
+    UIView.animate(
+      withDuration: 0.25,
+      animations: {
+        self.calculatedLabel.alpha = 1.0
+        self.calculatedLabel.transform = CGAffineTransform(scaleX: 2, y: 2)
+      },
+      completion: nil
+    )
   }
 }
